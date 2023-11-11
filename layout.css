@@ -1,0 +1,57 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000;
+    color: white;
+    height: 60px;
+    padding: 10px 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 400px;
+    height: auto;
+    gap: 18px;
+  
+}
+
+nav ul li a{
+    color: #ddd;
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+
+.hambruger{
+    cursor: pointer;
+    display: none;
+
+}
+
+.bar{
+    background-color: #fff;
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+}
+
+
+
+
+
+@media screen and (max-width:700px) {
+    nav ul li{
+        display: none;
+    }
+
+    .hambruger{
+        display: block;
+    }
+    
+    
+}
+

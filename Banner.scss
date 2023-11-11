@@ -1,0 +1,202 @@
+@import "../../../css-config/mixins.scss";
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #8e2de2;
+  // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  overflow: hidden;
+}
+section .air{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px
+}
+section .air.air1{
+  animation: wave 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+section .air.air2{
+  animation: wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+section .air.air3{
+  animation: wave 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+section .air.air4{
+  animation: wave2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes wave{
+  0%{
+    background-position-x: 0px; 
+  }
+  100%{
+    background-position-x: 1000px; 
+  }
+}
+@keyframes wave2{
+  0%{
+    background-position-x: 0px; 
+  }
+  100%{
+    background-position-x: -1000px; 
+  }
+}
+
+.hero-banner {
+    padding: 40px 0;
+    position: relative;
+    // background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    @include md {
+        height: calc(100vh - 80px);
+    }
+    .content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        position: relative;
+        @include md {
+            flex-direction: row;
+            max-width: 1200px;
+        }
+        .banner-img {
+            // position: relative;
+            // z-index: 9;
+            // width: 200px;
+            // margin-bottom: 20px;
+            width: 300px;
+            margin-bottom: 20px;
+            margin-left: 50px;
+            @include md {
+                width: 450px;
+                margin-right: 10px;
+                margin-top: 80px;
+                margin-bottom: 0;
+            }
+            @include xxl {
+                width: 600px;
+                margin-right: 0;
+                margin-top: 0;
+            }
+        }
+        .text-content {
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            @include md {
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @include xxl {
+                left: 0;
+            }
+            h1 {
+                font-size: 70px;
+                font-weight: 700;
+                line-height: 1;
+                color: white;
+                margin-bottom: 20px;
+                position: absolute;
+                transform: translate(-50%,-50%);
+                margin-left: 21rem;
+                margin-top: 1.5rem;
+                @include md {
+                    
+                    font-size: 100px;
+                    margin-left: 602px;
+                    
+                }
+            }
+            h1:nth-child(1){
+                color: transparent;
+                -webkit-text-stroke: 2px #03a9f4;
+
+            }
+            h1:nth-child(2){
+                color: #03a9f4;
+                animation: animate1 4s ease-in-out infinite;
+
+            }
+
+        
+            p.para {
+                max-width: 300px;
+                font-size: 20px;
+                line-height: 20px;
+                margin-bottom: 20px;
+                margin-top: 3rem;
+                @include md {
+                    max-width: 500px;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 40px;
+                    font-weight: 500;
+                    margin-top: 80px;
+                }
+            }
+            .ctas {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                .banner-cta {
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 500;
+                    // width: fit-content;
+                    border: 2px solid white;
+                    padding: 10px 20px;
+                    transition: all ease 0.3s;
+                    cursor: pointer;
+                    &.v2 {
+                        background-color: white;
+                        color: black;
+                        
+                    }
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+}
+
+@keyframes animate1 {
+    0%,100%{
+        clip-path: polygon(0% 45%,15% 44%,32% 50%,54% 60%,70% 61%, 84% 59%, 100% 52%,100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0% 60%,16% 65%,34% 66%,51% 62%,67% 50%,84% 45%,100% 46%,100% 100%,0% 100%);
+    }
+
+}
